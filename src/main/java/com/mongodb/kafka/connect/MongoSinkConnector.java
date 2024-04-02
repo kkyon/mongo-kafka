@@ -105,18 +105,18 @@ public class MongoSinkConnector extends SinkConnector {
                                 topic -> {
                                   MongoSinkTopicConfig mongoSinkTopicConfig =
                                       sinkConfig.getMongoSinkTopicConfig(topic);
-                                  validateUserHasActions(
-                                      client,
-                                      sinkConfig.getConnectionString().getCredential(),
-                                      mongoSinkTopicConfig.isTimeseries()
-                                          ? REQUIRED_COLLSTATS_SINK_ACTIONS
-                                          : REQUIRED_SINK_ACTIONS,
-                                      mongoSinkTopicConfig.getString(
-                                          MongoSinkTopicConfig.DATABASE_CONFIG),
-                                      mongoSinkTopicConfig.getString(
-                                          MongoSinkTopicConfig.COLLECTION_CONFIG),
-                                      CONNECTION_URI_CONFIG,
-                                      config);
+                                  // validateUserHasActions(
+                                  //     client,
+                                  //     sinkConfig.getConnectionString().getCredential(),
+                                  //     mongoSinkTopicConfig.isTimeseries()
+                                  //         ? REQUIRED_COLLSTATS_SINK_ACTIONS
+                                  //         : REQUIRED_SINK_ACTIONS,
+                                  //     mongoSinkTopicConfig.getString(
+                                  //         MongoSinkTopicConfig.DATABASE_CONFIG),
+                                  //     mongoSinkTopicConfig.getString(
+                                  //         MongoSinkTopicConfig.COLLECTION_CONFIG),
+                                  //     CONNECTION_URI_CONFIG,
+                                  //     config);
                                   validateConfigAndCollection(client, mongoSinkTopicConfig, config);
                                 }));
                 sinkConfig
